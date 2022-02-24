@@ -1,0 +1,44 @@
+{% extends 'customer/base.html'%}
+
+
+
+{% block content %}
+<!--Main Navigation-->
+<style>
+    body {
+    background-image: url('media/bg1.jpeg');
+    height: 850px;
+    width: 1585px;
+    
+    }
+
+    /* Height for devices larger than 576px */
+    @media (min-width: 992px) {
+    #intro {
+        margin-top: -58.59px;
+    }
+    }
+
+    .navbar .nav-link {
+    color: #fff !important;
+    }
+</style>
+
+
+
+        <div class="container mb-5 ">
+            <div class="row justify-content-center mt-3">
+                <div class="col-md-8 col-sm-12 offset-md-1 p-4 text-center">
+        <h1 style="font-weight: bold; text-decoration-color: cornsilk;"> Online Food Delivery Service</h1>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-1">
+                <div class="card col-md-5 col-sm-12 offset-md-1 p-4 text-center" style="background-color: cornsilk;">
+                    <h2>Place an Order!</h2>
+                    <a href="{% url 'order' %}" class="btn btn-outline-primary bg-brown">Order Now!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %} 
