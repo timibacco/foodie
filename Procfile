@@ -1,0 +1,1 @@
+wakeup: gunicorn foodie.wsgi
