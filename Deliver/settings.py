@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
-import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -30,7 +29,7 @@ with open('customer/secret_key.txt') as f:
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["DJANGO_ALLLOWED_HOSTS",'127.0.0.1','buka.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1','buka.herokuapp.com']
 
 # for backend authentication
 
@@ -144,7 +143,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
     'customer/templates/customer',
     os.path.join(BASE_DIR, 'templates'),
 ]

@@ -1,1 +1,1 @@
-wakeup: gunicorn foodie.wsgi
+wakeup: gunicorn Deliver.wsgi --log-file -
