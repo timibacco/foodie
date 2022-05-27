@@ -1,1 +1,1 @@
-wakeup: gunicorn Deliver.wsgi --log-file -
+web: gunicorn Deliver.wsgi --log-file -
