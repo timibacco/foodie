@@ -1,1 +1,14 @@
-__pycache__
+__pycache__/
+
+customer/secretkey.txt
+
+*.__pyc
+
+env/
+venv/
+.env
+*.sqlite3
+.vscode/
+.idea/
+staticfiles/
+*.log

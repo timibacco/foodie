@@ -4,6 +4,7 @@ from django.shortcuts import redirect, render
 from django.views import View 
 from django.core.mail import send_mail
 from .models import MenuItem, Category, OrderModel
+from django.http import JsonResponse
 
 class Index(View):
     def get(self, request, *args, **kwargs):
@@ -45,13 +46,14 @@ class Order(View):
         zip_code = request.POST.get('zip')
         
         
+        
 
         order_items = {
             'items': []
         }
         
 
-        items = request.POST.getlist('items[]')
+        items = self.request.POST.getlist('items[]')
 
         for item in items:
             menu_item = MenuItem.objects.get(pk__contains= int(item))
@@ -102,6 +104,9 @@ class Order(View):
         }
 
         return redirect( 'order-confirmation' , pk= order.pk)
+    
+
+
 
 class OrderConfirmation(View):
     def get(self, request, pk, *args, **kwargs):
@@ -117,8 +122,8 @@ class OrderConfirmation(View):
         return render(request, 'customer/order_confirmation.html', context)
 
 
-    def post(self, request, pk, *args, **kwargs):
-        data = json.loads(request.body)
+    def post(self, pk, *args, **kwargs):
+        data = json.loads(self.request.body)
 
         if data['isPaid']:
             order= OrderModel.objects.get(pk=pk)

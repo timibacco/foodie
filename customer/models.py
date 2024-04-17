@@ -33,7 +33,7 @@ class OrderModel(models.Model):
 
     price = models.DecimalField(max_digits=7, decimal_places=2)
 
-# create another many to many rel between ordersand the menuitem.
+# create another many to many rel between orders and the menuitem.
 
     items = models.ManyToManyField('MenuItem', related_name= 'order', blank= True)
 
