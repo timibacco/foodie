@@ -1,44 +1,34 @@
-{% extends 'customer/base.html'%}
+{% load static %}
 
-
-
-{% block content %}
-<!--Main Navigation-->
-<style>
-    body {
-    background-image: url('media/bg1.jpeg');
-    height: 850px;
-    width: 1585px;
-    
-    }
-
-    /* Height for devices larger than 576px */
-    @media (min-width: 992px) {
-    #intro {
-        margin-top: -58.59px;
-    }
-    }
-
-    .navbar .nav-link {
-    color: #fff !important;
-    }
-</style>
-
-
-
-        <div class="container mb-5 ">
-            <div class="row justify-content-center mt-3">
-                <div class="col-md-8 col-sm-12 offset-md-1 p-4 text-center">
-        <h1 style="font-weight: bold; text-decoration-color: cornsilk;"> Online Food Delivery Service</h1>
-                </div>
-            </div>
-            <div class="row justify-content-center mt-1">
-                <div class="card col-md-5 col-sm-12 offset-md-1 p-4 text-center" style="background-color: cornsilk;">
-                    <h2>Place an Order!</h2>
-                    <a href="{% url 'order' %}" class="btn btn-outline-primary bg-brown">Order Now!</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Food Delivery Service</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body class="bg-yellow-50">
+    <div class="container mx-auto px-4">
+        <div class="flex flex-col items-center justify-center min-h-screen text-center py-4">
+            <h1 class="text-4xl font-bold text-red-600 mb-4">Your Online Food Delivery Service !</h1>
+            <div class="flex flex-wrap justify-center">
+                <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5">
+                    <div class=" rounded ">
+                        <a href="{% url 'order' %}" class="inline-block px-6 py-3 text-lg text-white bg-red-600 rounded hover:bg-red-700">Order Now!</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-{% endblock content %} 
+    <script>
+        $(document).ready(function() {
+            $('#order-button').hover(
+                function() { $(this).animate({ 'zoom': 1.2 }, 400); },
+                function() { $(this).animate({ 'zoom': 1 }, 400); }
+            );
+        });    
+    </script>
+</body>
+</html>
